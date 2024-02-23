@@ -68,8 +68,8 @@ function ProductPage() {
 
 
   return (
-    <div className="py-20 px-6 grid place-items-center space-y-7">
-      <div className="w-full flex justify-end gap-4 max-w-7xl">
+    <div className="pt-8 sm:pt-28 px-6 grid place-items-center space-y-7">
+      <div className="w-full flex justify-end gap-4 max-w-7xl ">
         <div>
           <h4 className="pb-1 text-sm font-semibold text-gray-500 text-right">
             Filter

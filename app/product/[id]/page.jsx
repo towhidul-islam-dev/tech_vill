@@ -44,7 +44,7 @@ function ProductPage() {
   });
 
   return (
-    <div className="flex sm:items-center sm:justify-center flex-col px-6">
+    <div className="flex sm:items-center sm:justify-center flex-col px-6 pt-1 sm:pt-20">
       <div className="grid place-items-start w-full max-w-7xl">
         <Link
           href="/product"

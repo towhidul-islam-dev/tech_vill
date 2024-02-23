@@ -13,9 +13,9 @@ import ProductPage from "./product/page";
 
 export default function Home() {
   return (
-    <div className="grid place-items-center ">
+    <div className="grid place-items-center pt-6 sm:pt-24">
       <div className="relative w-full h-full max-w-7xl">
-        <div>
+        <div className="px-4 xl:px-0">
           <Slider />
         </div>
         <Header />

@@ -26,7 +26,7 @@ const Navbar = () => {
   return (
     
     <div className="flex justify-center">
-      <div className="flex max-w-7xl justify-between items-center w-full h-20 px-4 xl:px-0 text-white nav">
+      <div className="bg-gray-50 flex max-w-7xl justify-between items-center w-full h-20 px-4 xl:px-0 text-white nav">
         <div>
           <Link className="text-3xl text-gray-200 z-50" href="/" rel="noreferrer">
             <SwatchIcon className="h-8 w-8 text-violet-800" />

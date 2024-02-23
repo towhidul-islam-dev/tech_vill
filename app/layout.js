@@ -4,8 +4,8 @@ import "./globals.css";
 
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 
-import Navbar from "@/app/common/Navbar";
 import Footer from "./common/Footer";
+import Navbar from "./common/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +21,9 @@ export default function Layout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <QueryClientProvider client={queryClient}>
-          <Navbar />
+          <div className="sm:bg-gray-50 z-50 sm:w-full sm:fixed sm:top-0 sm:left-0">
+            <Navbar />
+          </div>
           {children}
           <Footer />
         </QueryClientProvider>

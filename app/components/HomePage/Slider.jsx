@@ -21,7 +21,7 @@ const Slider = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative overflow-hidden rounded-lg">
       <button
         className="absolute inset-y-0 left-0 z-10 flex items-center justify-center w-12 h-12 text-white transition-opacity duration-300 bg-black bg-opacity-25 hover:bg-opacity-50 focus:outline-none"
         onClick={prevSlide}
@@ -34,7 +34,7 @@ const Slider = () => {
       >
         &gt;
       </button>
-      <div className="flex overflow-hidden rounded-lg max-h-[400px]">
+      <div className="flex overflow-hidden max-h-[400px]">
         {images.map((image, i) => {
           return (
             <Image
