@@ -4,6 +4,7 @@ import {
   SwatchIcon,
   XMarkIcon,
   BarsArrowDownIcon,
+  ShoppingCartIcon,
 } from "@heroicons/react/24/outline";
 
 const Navbar = () => {
@@ -21,14 +22,18 @@ const Navbar = () => {
       route: "/product",
     },
     { id: 3, link: "sign up", route: "/sign_up" },
+    { id: 4, link: "ShoppingCartIcon", route: "/cart" },
   ];
 
   return (
-    
     <div className="flex justify-center">
-      <div className="bg-gray-50 flex max-w-7xl justify-between items-center w-full h-20 px-4 xl:px-0 text-white nav">
+      <div className=" flex max-w-7xl justify-between items-center w-full h-20 px-4 xl:px-0 text-white nav">
         <div>
-          <Link className="text-3xl text-gray-200 z-50" href="/" rel="noreferrer">
+          <Link
+            className="text-3xl text-gray-200 z-50"
+            href="/"
+            rel="noreferrer"
+          >
             <SwatchIcon className="h-8 w-8 text-violet-800" />
           </Link>
         </div>
@@ -38,7 +43,13 @@ const Navbar = () => {
               key={id}
               className="nav-links px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-105 hover:text-gray-600 duration-200 link-underline"
             >
-              <Link href={route}>{link}</Link>
+              <Link href={route}>
+                {link === "ShoppingCartIcon" ? (
+                  <ShoppingCartIcon className="h-6 w-6 text-gray-700" />
+                ) : (
+                  link
+                )}
+              </Link>
             </li>
           ))}
         </ul>
@@ -60,7 +71,11 @@ const Navbar = () => {
                 className="px-4 w-full max-w-sm cursor-pointer capitalize py-6 text-xl"
               >
                 <Link onClick={() => setNav(!nav)} href={route}>
-                  {link}
+                  {link === "ShoppingCartIcon" ? (
+                    <ShoppingCartIcon className="h-6 w-6 text-gray-700" />
+                  ) : (
+                    link
+                  )}
                 </Link>
               </li>
             ))}
