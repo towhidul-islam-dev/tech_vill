@@ -1,10 +1,12 @@
-"use client"
-import React, { useEffect, useState } from "react";
+"use client";
+import React, { useEffect, useState, useContext } from "react";
 import Error from "next/error";
 
 import { useQuery } from "@tanstack/react-query";
-import Product from "./components/Product";
+
+import CartContextProvider from "../../context/CartContext";
 import Category from "./components/Category";
+import Product from "./components/Product";
 import SortProduct from "./components/SortingProduct";
 
 const sortOptions = [
@@ -15,13 +17,13 @@ const sortOptions = [
   { id: 5, name: "rating", value: "rating" },
 ];
 
-
 function ProductPage() {
   const [categoryProduct, setCategoryProduct] = useState([]);
 
   const categories = getUniqueObjects(categoryProduct, "category");
   const [selectedOption, setSelectedOption] = useState(null);
   const [sortData, setSortData] = useState(null);
+  const {cart,setCart}  = useContext(CartContextProvider);
 
   function getUniqueObjects(arr, property) {
     const uniqueObjects = [];
@@ -66,12 +68,11 @@ function ProductPage() {
     setSortData("default");
   }, []);
 
-
   return (
-    <div className="pt-8 sm:pt-28 px-6 grid place-items-center space-y-7">
-      <div className="w-full flex justify-end gap-4 max-w-7xl ">
+    <div className="grid px-6 pt-8 sm:pt-28 place-items-center space-y-7">
+      <div className="flex justify-end w-full gap-4 max-w-7xl ">
         <div>
-          <h4 className="pb-1 text-sm font-semibold text-gray-500 text-right">
+          <h4 className="pb-1 text-sm font-semibold text-right text-gray-500">
             Filter
           </h4>
           <Category
@@ -81,7 +82,7 @@ function ProductPage() {
           />
         </div>
         <div>
-          <h4 className="pb-1 text-right text-sm font-semibold text-gray-500">
+          <h4 className="pb-1 text-sm font-semibold text-right text-gray-500">
             Sort
           </h4>
           <SortProduct
@@ -92,7 +93,14 @@ function ProductPage() {
         </div>
       </div>
 
-      <Product ctry={selectedOption} data={data} sortData={sortData} setSortData={setSortData} />
+      <Product
+        ctry={selectedOption}
+        data={data}
+        sortData={sortData}
+        setSortData={setSortData}
+        cart={cart}
+        setCart={setCart}
+      />
     </div>
   );
 }

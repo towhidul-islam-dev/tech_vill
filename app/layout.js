@@ -4,6 +4,7 @@ import "./globals.css";
 
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 
+import { CartContext } from "../context/CartContext";
 import Footer from "./common/Footer";
 import Navbar from "./common/Navbar";
 
@@ -20,13 +21,15 @@ export default function Layout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <QueryClientProvider client={queryClient}>
-          <div className="sm:bg-gray-50 z-50 sm:w-full sm:fixed sm:top-0 sm:left-0">
-            <Navbar />
-          </div>
-          {children}
-          <Footer />
-        </QueryClientProvider>
+        <CartContext>
+          <QueryClientProvider client={queryClient}>
+            <div className="z-50 sm:bg-gray-50 sm:w-full sm:fixed sm:top-0 sm:left-0">
+              <Navbar />
+            </div>
+            {children}
+            <Footer />
+          </QueryClientProvider>
+        </CartContext>
       </body>
     </html>
   );

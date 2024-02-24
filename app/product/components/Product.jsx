@@ -18,7 +18,7 @@ const sortProductData = (arr, property) => {
   return data;
 };
 
-function Product({ data, ctry, sortData, setSortData }) {
+function Product({ data, ctry, sortData, setSortData, cart, setCart }) {
   const route = useRouter();
   const [category, setCategory] = useState([]);
   const [sortedData, setSortedData] = useState([]);
@@ -36,6 +36,16 @@ function Product({ data, ctry, sortData, setSortData }) {
       setCategory(categoryDatas);
     }
   };
+
+  // Add to Cart functionality...
+  const addToCart = (id) => {
+    const addIntendentproduct = data?.products?.find(
+      (product) => product.id === id
+    );
+
+    setCart((prevItem) => [...prevItem, addIntendentproduct]);
+  };
+
   useEffect(() => {
     const x = sortProductData(data?.products, sortData);
     setSortedData(x);
@@ -52,17 +62,17 @@ function Product({ data, ctry, sortData, setSortData }) {
           ? data?.products?.map((product) => {
               return (
                 <div
-                  className="p-4 border border-violet-200 hover:gray-300 hover:shadow-md rounded-lg"
-                  /* className="border border-natural2 p-4  space-y-4 lg:flex lg:justify-between lg:gap-4" */
+                  className="p-4 space-y-3 border rounded-lg border-violet-200 hover:gray-300 hover:shadow-md"
+                  /* className="p-4 space-y-4 border border-natural2 lg:flex lg:justify-between lg:gap-4" */
                   key={product.id}
                 >
                   <Link
                     href={`/product/${product.id}?category=${product.category}`}
-                    className="    space-y-4 lg:flex lg:justify-between lg:gap-4"
+                    className="z-10 space-y-4 lg:flex lg:justify-between lg:gap-4"
                   >
                     <div className="lg:max-w-32">
                       <Image
-                        className="aspect-square  w-full"
+                        className="w-full aspect-square"
                         src={`${product.images[0]}`}
                         alt={product.title}
                         width={300}
@@ -79,42 +89,45 @@ function Product({ data, ctry, sortData, setSortData }) {
                         </p>
                       </div>
                       <div className="pt-4">
-                        <button className="px-4 py-1 text-sm capitalize border border-gray-200 rounded-full font-medium">
+                        <button className="px-4 py-1 text-sm font-medium capitalize border border-gray-200 rounded-full">
                           {product.category}
                         </button>
                       </div>
                     </div>
-                    <div className="flex items-center justify-between gap-4 lg:gap-2 lg:min-w-48">
-                      <div>
-                        <h4 className="capitalize text-small">price</h4>
-                        <h2 className="text-xl font-semibold text-violet-900">
-                          ${product.price}
-                        </h2>
-                      </div>
-                      <div>
-                        <button className="text-small font-bold capitalize text-gray-50 rounded-md bg-violet-800 px-4 py-2">
-                          add to cart
-                        </button>
-                      </div>
-                    </div>
                   </Link>
+                  <div className="flex items-center justify-between gap-4 lg:gap-2 lg:min-w-48">
+                    <div>
+                      <h4 className="capitalize text-small">price</h4>
+                      <h2 className="text-xl font-semibold text-violet-900">
+                        ${product.price}
+                      </h2>
+                    </div>
+                    <div className="z-20">
+                      <button
+                        className="px-4 py-2 font-bold capitalize rounded-md hover:bg-violet-600 text-small text-gray-50 bg-violet-800"
+                        onClick={() => addToCart(product.id)}
+                      >
+                        add to cart
+                      </button>
+                    </div>
+                  </div>
                 </div>
               );
             })
           : sortedData.map((product) => {
               return (
                 <div
-                  className=" p-4 border border-violet-200 hover:gray-300 hover:shadow-md rounded-lg"
-                  // className="border border-gray-200 p-4 rounded-lg space-y-4 lg:flex lg:justify-between lg:gap-4"
+                  className="p-4 space-y-3 border rounded-lg border-violet-200 hover:gray-300 hover:shadow-md"
+                  // className="p-4 space-y-4 border border-gray-200 rounded-lg lg:flex lg:justify-between lg:gap-4"
                   key={product.id}
                 >
                   <Link
                     href={`/product/${product.id}?category=${product.category}`}
-                    className="  rounded-lg space-y-4 lg:flex lg:justify-between lg:gap-4"
+                    className="z-10 space-y-4 rounded-lg lg:flex lg:justify-between lg:gap-4"
                   >
                     <div className="lg:max-w-32">
                       <Image
-                        className="aspect-square rounded-lg w-full"
+                        className="w-full rounded-lg aspect-square"
                         src={`${product.images[0]}`}
                         alt={product.title}
                         width={300}
@@ -131,42 +144,45 @@ function Product({ data, ctry, sortData, setSortData }) {
                         </p>
                       </div>
                       <div className="pt-4">
-                        <button className="px-6 text-sm capitalize py-2 border border-gray-200 rounded-full font-medium">
+                        <button className="px-6 py-2 text-sm font-medium capitalize border border-gray-200 rounded-full">
                           {product.category}
                         </button>
                       </div>
                     </div>
-                    <div className="flex items-center justify-between gap-4 lg:gap-2 lg:min-w-48">
-                      <div>
-                        <h4 className="capitalize text-small">price</h4>
-                        <h2 className="text-xl font-semibold text-violet-900">
-                          ${product.price}
-                        </h2>
-                      </div>
-                      <div>
-                        <button className="text-small font-bold capitalize text-gray-50 rounded-md bg-violet-800 px-4 py-2">
-                          add to cart
-                        </button>
-                      </div>
-                    </div>
                   </Link>
+                  <div className="flex items-center justify-between gap-4 lg:gap-2 lg:min-w-48">
+                    <div>
+                      <h4 className="capitalize text-small">price</h4>
+                      <h2 className="text-xl font-semibold text-violet-900">
+                        ${product.price}
+                      </h2>
+                    </div>
+                    <div className="z-20">
+                      <button
+                        className="px-4 py-2 font-bold capitalize rounded-md hover:bg-violet-600 text-small text-gray-50 bg-violet-800"
+                        onClick={() => addToCart(product.id)}
+                      >
+                        add to cart
+                      </button>
+                    </div>
+                  </div>
                 </div>
               );
             })
         : category?.map((product) => {
             return (
               <div
-                className="p-4 border border-violet-200 hover:gray-300 hover:shadow-md rounded-lg"
-                // className="border border-gray-200 p-4 rounded-lg space-y-4 lg:flex lg:justify-between lg:gap-4"
+                className="p-4 space-y-3 border rounded-lg border-violet-200 hover:gray-300 hover:shadow-md"
+                // className="p-4 space-y-4 border border-gray-200 rounded-lg lg:flex lg:justify-between lg:gap-4"
                 key={product.id}
               >
                 <Link
                   href={`/product/${product.id}?category=${product.category}`}
-                  className=" space-y-4 lg:flex lg:justify-between lg:gap-4"
+                  className="z-10 space-y-4 lg:flex lg:justify-between lg:gap-4"
                 >
                   <div className="lg:max-w-32">
                     <Image
-                      className="aspect-square  w-full"
+                      className="w-full aspect-square"
                       src={`${product.images[0]}`}
                       alt={product.title}
                       width={300}
@@ -183,25 +199,28 @@ function Product({ data, ctry, sortData, setSortData }) {
                       </p>
                     </div>
                     <div className="pt-4">
-                      <button className="px-6 text-sm capitalize py-2 border border-gray-200 rounded-full font-medium">
+                      <button className="px-6 py-2 text-sm font-medium capitalize border border-gray-200 rounded-full">
                         {product.category}
                       </button>
                     </div>
                   </div>
-                  <div className="flex items-center justify-between gap-4 lg:gap-2 lg:min-w-48">
-                    <div>
-                      <h4 className="capitalize text-small">price</h4>
-                      <h2 className="text-xl font-semibold text-violet-900">
-                        ${product.price}
-                      </h2>
-                    </div>
-                    <div>
-                      <button className="text-small font-bold capitalize text-gray-50 rounded-md bg-violet-800 px-4 py-2">
-                        add to cart
-                      </button>
-                    </div>
-                  </div>
                 </Link>
+                <div className="flex items-center justify-between gap-4 lg:gap-2 lg:min-w-48">
+                  <div>
+                    <h4 className="capitalize text-small">price</h4>
+                    <h2 className="text-xl font-semibold text-violet-900">
+                      ${product.price}
+                    </h2>
+                  </div>
+                  <div className="z-20">
+                    <button
+                      className="px-4 py-2 font-bold capitalize rounded-md hover:bg-violet-600 text-small text-gray-50 bg-violet-800"
+                      onClick={() => addToCart(product.id)}
+                    >
+                      add to cart
+                    </button>
+                  </div>
+                </div>
               </div>
             );
           })}
