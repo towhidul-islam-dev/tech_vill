@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import { useParams, useSearchParams } from "next/navigation";
 import Link from "next/link";
 
@@ -11,13 +11,14 @@ import {
   ChevronLeftIcon,
 } from "@heroicons/react/24/outline";
 
+import CartContextProvider from "@/context/CartContext";
 import IdenticalProduct from "./IdenticalProduct";
-// import { HeartIcon } from "@heroicons/react/24/solid";
 
 function ProductPage() {
   const params = +useParams().id;
   const categoryParams = useSearchParams().get("category");
   const [relatedProduct, setRelatedProduct] = useState([]);
+  const {addToCart} = useContext(CartContextProvider);
 
   const fetchingSpecificData = async () => {
     const res = await fetch("https://dummyjson.com/products?limit=90");
@@ -83,7 +84,7 @@ function ProductPage() {
               <h2 className="text-xl font-semibold">${data?.price}</h2>
             </div>
             <div>
-              <button className="text-sm capitalize text-gray-100 rounded-md bg-violet-800 px-4 py-2">
+              <button className="text-sm capitalize text-gray-100 rounded-md bg-violet-800 px-4 py-2" onClick={() => addToCart(data)}>
                 add to cart
               </button>
             </div>

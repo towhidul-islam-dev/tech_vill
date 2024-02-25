@@ -21,8 +21,8 @@ function Modal(props) {
         }
     };
     return (
-        <div className="animate-moveUp">
-            <div className="w-full max-w-xs p-4 border-2 rounded-md shadow-md border-primary/70 bg-primary/30">
+        <div className="">
+            <div className="w-full max-w-xs p-4 border rounded-md shadow-md border-violet-500/20 bg-gray-500/20">
                 <div className="flex flex-col gap-8">
                     <div className="flex w-max ">
                         <button onClick={handleModal} className="">
@@ -37,7 +37,7 @@ function Modal(props) {
                     <button
                         type="button"
                         onClick={handleRemoveAllItems}
-                        className='px-8 py-2 flex items-center justify-center gap-2 capitalize font-semibold cursor-pointer w-full bg-nutral3 text-denger hover:bg-denger rounded-md hover:text-nutral3 transition-all ease-in-out duration-[300ms]'
+                        className='px-8 py-2 flex items-center justify-center gap-2 capitalize font-semibold cursor-pointer w-full bg-natural3/70 text-denger hover:bg-denger rounded-md hover:text-natural3 transition-all ease-in-out duration-[300ms]'
                     >
                         
                         <GiConfirmed classNames="text-2xl font-bold text-denger mr-4" />

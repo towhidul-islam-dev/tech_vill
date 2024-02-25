@@ -18,7 +18,16 @@ const sortProductData = (arr, property) => {
   return data;
 };
 
-function Product({ data, ctry, sortData, setSortData, cart, setCart }) {
+function Product({
+  data,
+  ctry,
+  sortData,
+  setSortData,
+  cart,
+  setCart,
+  setUnFilteredCart,
+  addToCart,
+}) {
   const route = useRouter();
   const [category, setCategory] = useState([]);
   const [sortedData, setSortedData] = useState([]);
@@ -38,12 +47,12 @@ function Product({ data, ctry, sortData, setSortData, cart, setCart }) {
   };
 
   // Add to Cart functionality...
-  const addToCart = (id) => {
+  const addToCartProduct = (id) => {
     const addIntendentproduct = data?.products?.find(
       (product) => product.id === id
     );
-
-    setCart((prevItem) => [...prevItem, addIntendentproduct]);
+    setUnFilteredCart((prevItem) => [...prevItem, addIntendentproduct]);
+    addToCart(addIntendentproduct);
   };
 
   useEffect(() => {
@@ -56,14 +65,13 @@ function Product({ data, ctry, sortData, setSortData, cart, setCart }) {
   }, [ctry]);
 
   return (
-    <div className="grid gap-3 md:gap-6 grid-cols-productLayout lg:grid-cols-1">
+    <div className="grid gap-3 md:gap-6 min-h-[600px] grid-cols-productLayout lg:grid-cols-1">
       {ctry === "default"
         ? sortData === "default"
           ? data?.products?.map((product) => {
               return (
                 <div
-                  className="p-4 space-y-3 border rounded-lg border-violet-200 hover:gray-300 hover:shadow-md"
-                  /* className="p-4 space-y-4 border border-natural2 lg:flex lg:justify-between lg:gap-4" */
+                  className="p-4 space-y-3 border rounded-lg border-violet-200 hover:gray-300 hover:shadow-md lg:flex lg:items-center lg:justify-between lg:gap-3"
                   key={product.id}
                 >
                   <Link
@@ -105,7 +113,7 @@ function Product({ data, ctry, sortData, setSortData, cart, setCart }) {
                     <div className="z-20">
                       <button
                         className="px-4 py-2 font-bold capitalize rounded-md hover:bg-violet-600 text-small text-gray-50 bg-violet-800"
-                        onClick={() => addToCart(product.id)}
+                        onClick={() => addToCartProduct(product.id)}
                       >
                         add to cart
                       </button>
@@ -117,8 +125,7 @@ function Product({ data, ctry, sortData, setSortData, cart, setCart }) {
           : sortedData.map((product) => {
               return (
                 <div
-                  className="p-4 space-y-3 border rounded-lg border-violet-200 hover:gray-300 hover:shadow-md"
-                  // className="p-4 space-y-4 border border-gray-200 rounded-lg lg:flex lg:justify-between lg:gap-4"
+                  className="p-4 space-y-3 border rounded-lg border-violet-200 hover:gray-300 hover:shadow-md lg:flex lg:items-center lg:justify-between lg:gap-3"
                   key={product.id}
                 >
                   <Link
@@ -160,7 +167,7 @@ function Product({ data, ctry, sortData, setSortData, cart, setCart }) {
                     <div className="z-20">
                       <button
                         className="px-4 py-2 font-bold capitalize rounded-md hover:bg-violet-600 text-small text-gray-50 bg-violet-800"
-                        onClick={() => addToCart(product.id)}
+                        onClick={() => addToCartProduct(product.id)}
                       >
                         add to cart
                       </button>
@@ -172,8 +179,7 @@ function Product({ data, ctry, sortData, setSortData, cart, setCart }) {
         : category?.map((product) => {
             return (
               <div
-                className="p-4 space-y-3 border rounded-lg border-violet-200 hover:gray-300 hover:shadow-md"
-                // className="p-4 space-y-4 border border-gray-200 rounded-lg lg:flex lg:justify-between lg:gap-4"
+                className="p-4 space-y-3 border rounded-lg border-violet-200 hover:gray-300 hover:shadow-md lg:flex lg:items-center lg:justify-between lg:gap-3"
                 key={product.id}
               >
                 <Link
@@ -215,7 +221,7 @@ function Product({ data, ctry, sortData, setSortData, cart, setCart }) {
                   <div className="z-20">
                     <button
                       className="px-4 py-2 font-bold capitalize rounded-md hover:bg-violet-600 text-small text-gray-50 bg-violet-800"
-                      onClick={() => addToCart(product.id)}
+                      onClick={() => addToCartProduct(product.id)}
                     >
                       add to cart
                     </button>

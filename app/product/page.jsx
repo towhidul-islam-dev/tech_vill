@@ -23,7 +23,8 @@ function ProductPage() {
   const categories = getUniqueObjects(categoryProduct, "category");
   const [selectedOption, setSelectedOption] = useState(null);
   const [sortData, setSortData] = useState(null);
-  const {cart,setCart}  = useContext(CartContextProvider);
+  const { cart, setCart, setUnFilteredCart, addToCart } =
+    useContext(CartContextProvider);
 
   function getUniqueObjects(arr, property) {
     const uniqueObjects = [];
@@ -70,7 +71,7 @@ function ProductPage() {
 
   return (
     <div className="grid px-6 pt-8 sm:pt-28 place-items-center space-y-7">
-      <div className="flex justify-end w-full gap-4 max-w-7xl ">
+      <div className="flex justify-end w-full gap-4 max-w-7xl z-30">
         <div>
           <h4 className="pb-1 text-sm font-semibold text-right text-gray-500">
             Filter
@@ -100,6 +101,8 @@ function ProductPage() {
         setSortData={setSortData}
         cart={cart}
         setCart={setCart}
+        addToCart={addToCart}
+        setUnFilteredCart={setUnFilteredCart}
       />
     </div>
   );

@@ -12,7 +12,6 @@ const Navbar = () => {
   const { cart } = useContext(CartContextProvider);
   const [nav, setNav] = useState(false);
 
-  console.log(cart.length);
   const links = [
     {
       id: 1,
