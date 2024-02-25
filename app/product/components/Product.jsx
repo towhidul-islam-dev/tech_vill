@@ -65,25 +65,25 @@ function Product({
   }, [ctry]);
 
   return (
-    <div className="grid gap-3 md:gap-6 min-h-[600px] grid-cols-productLayout lg:grid-cols-1">
+    <div className="grid gap-3 md:gap-4 min-h-[600px] grid-cols-productLayout lg:grid-cols-1 w-full pb-8">
       {ctry === "default"
         ? sortData === "default"
           ? data?.products?.map((product) => {
               return (
                 <div
-                  className="p-4 space-y-3 border rounded-lg border-violet-200 hover:gray-300 hover:shadow-md lg:flex lg:items-center lg:justify-between lg:gap-3"
+                  className="p-4 group space-y-3 border rounded-lg border-violet-200 hover:gray-300 hover:shadow-md lg:flex lg:items-center lg:justify-between lg:gap-3"
                   key={product.id}
                 >
                   <Link
                     href={`/product/${product.id}?category=${product.category}`}
                     className="z-10 space-y-4 lg:flex lg:justify-between lg:gap-4"
                   >
-                    <div className="lg:max-w-32">
+                    <div className="lg:max-w-32 transition-transform group-hover:scale-105 ease-in-out duration-200">
                       <Image
                         className="w-full aspect-square"
                         src={`${product.images[0]}`}
                         alt={product.title}
-                        width={300}
+                        width={200}
                         height={200}
                       />
                     </div>
@@ -112,7 +112,7 @@ function Product({
                     </div>
                     <div className="z-20">
                       <button
-                        className="px-4 py-2 font-bold capitalize rounded-md hover:bg-violet-600 text-small text-gray-50 bg-violet-800"
+                        className="px-4 py-2 font-bold capitalize rounded-md hover:bg-violet-600 transition-colors ease-in-out duration-200 text-small text-gray-50 bg-violet-800"
                         onClick={() => addToCartProduct(product.id)}
                       >
                         add to cart
@@ -125,19 +125,19 @@ function Product({
           : sortedData.map((product) => {
               return (
                 <div
-                  className="p-4 space-y-3 border rounded-lg border-violet-200 hover:gray-300 hover:shadow-md lg:flex lg:items-center lg:justify-between lg:gap-3"
+                  className="p-4 space-y-3 border group rounded-lg border-violet-200 hover:gray-300 hover:shadow-md lg:flex lg:items-center lg:justify-between lg:gap-3"
                   key={product.id}
                 >
                   <Link
                     href={`/product/${product.id}?category=${product.category}`}
                     className="z-10 space-y-4 rounded-lg lg:flex lg:justify-between lg:gap-4"
                   >
-                    <div className="lg:max-w-32">
+                    <div className="lg:max-w-32 group-hover:scale-105 transition-transform ease-in-out duration-200">
                       <Image
                         className="w-full rounded-lg aspect-square"
                         src={`${product.images[0]}`}
                         alt={product.title}
-                        width={300}
+                        width={200}
                         height={200}
                       />
                     </div>
@@ -166,7 +166,7 @@ function Product({
                     </div>
                     <div className="z-20">
                       <button
-                        className="px-4 py-2 font-bold capitalize rounded-md hover:bg-violet-600 text-small text-gray-50 bg-violet-800"
+                        className="px-4 py-2 font-bold capitalize rounded-md hover:bg-violet-600 transition-colors ease-in-out duration-200 text-small text-gray-50 bg-violet-800"
                         onClick={() => addToCartProduct(product.id)}
                       >
                         add to cart
@@ -179,19 +179,19 @@ function Product({
         : category?.map((product) => {
             return (
               <div
-                className="p-4 space-y-3 border rounded-lg border-violet-200 hover:gray-300 hover:shadow-md lg:flex lg:items-center lg:justify-between lg:gap-3"
+                className="p-4 group space-y-3 border rounded-lg border-violet-200 hover:gray-300 hover:shadow-md lg:flex lg:items-center lg:justify-between lg:gap-3"
                 key={product.id}
               >
                 <Link
                   href={`/product/${product.id}?category=${product.category}`}
                   className="z-10 space-y-4 lg:flex lg:justify-between lg:gap-4"
                 >
-                  <div className="lg:max-w-32">
+                  <div className="lg:max-w-32 group-hover:scale-105 transition-transform ease-in-out duration-200">
                     <Image
                       className="w-full aspect-square"
                       src={`${product.images[0]}`}
                       alt={product.title}
-                      width={300}
+                      width={200}
                       height={200}
                     />
                   </div>
@@ -220,7 +220,7 @@ function Product({
                   </div>
                   <div className="z-20">
                     <button
-                      className="px-4 py-2 font-bold capitalize rounded-md hover:bg-violet-600 text-small text-gray-50 bg-violet-800"
+                      className="px-4 py-2 font-bold capitalize rounded-md hover:bg-violet-600 transition-colors ease-in-out duration-200 text-small text-gray-50 bg-violet-800"
                       onClick={() => addToCartProduct(product.id)}
                     >
                       add to cart

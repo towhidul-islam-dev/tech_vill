@@ -10,13 +10,13 @@ import { QueueListIcon, RectangleGroupIcon } from "@heroicons/react/24/outline";
 
 function page() {
   return (
-    <div className="grid place-items-center pt-6 px-4 xl:px-0 lg:pt-28">
-      <div className="lg:bg-gray-100 px-4 md:py-28 xl:p-24 capitalize lg:grid lg:grid-cols-2 lg:place-items-center gap-4 w-full max-w-7xl">
-        <div className="relative border-3 border-red-500">
+    <div className="grid place-items-center pt-6 px-4 xl:px-0 lg:pt-28 min-h-[600px]">
+      <div className="lg:bg-gray-100 rounded-lg px-4 md:py-28 xl:p-24 capitalize lg:grid lg:grid-cols-2 lg:place-items-center gap-4 w-full max-w-7xl ">
+        <div className="relative">
           <div className="absolute w-48 h-56 top-32 hidden lg:block left-36 xl:left-48 bg-gradient-to-r rounded-full from-violet-900  via-purple-500 to-orange-500 "></div>
           <div className="absolute w-44 h-44 top-24 left-20 hidden lg:block bg-gradient-to-r rounded-full from-purple-900 via-violet-500 to-pink-500"></div>
 
-          <div className="hidden lg:block bg-white/30 backdrop-blur-lg backdrop-brightness-100 border border-violet-200 rounded-md p-10 space-y-5">
+          <div className="hidden lg:block bg-white/30 backdrop-blur-lg backdrop-brightness-100 border border-violet-200 rounded-xl p-10 space-y-5">
             <div className=""></div>
             <h2 className="uppercase pb-6 text-3xl text-violet-900 font-extrabold">
               Make Jeas beads as your life style
@@ -45,7 +45,7 @@ function page() {
             </div>
           </div>
         </div>
-        <div className="py-20 md:py-0 p-4 lg:p-8 grid place-items-center">
+        <div className="py-16 md:py-0 p-4 lg:p-8 grid place-items-center">
           <div className="bg-gray-50 shadow-md rounded-xl p-8 border border-violet-200 lg:max-w-md">
             <div className="pb-10 text-center">
               <h2 className="text-xl font-semibold">create an account</h2>

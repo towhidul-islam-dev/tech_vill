@@ -8,7 +8,7 @@ function IdenticalProduct({ categoryData }) {
 
   return (
     <div className="my-28 w-full grid place-items-center">
-      <h2 className="text-4xl font-bold pb-1 border-b w-full max-w-7xl border-violet-300 mb-12 text-center">
+      <h2 className="text-4xl font-bold pb-1 border-b w-full max-w-7xl border-violet-100 mb-12 text-center">
         Related Product
       </h2>
       <div className="w-full max-w-7xl">
@@ -57,7 +57,7 @@ function IdenticalProduct({ categoryData }) {
                   <div>
                     <button
                       onClick={() => addToCart(product)}
-                      className="text-small font-bold capitalize text-gray-100 rounded-md bg-violet-800 px-2 py-2"
+                      className="text-small font-bold capitalize text-gray-100 rounded-md bg-violet-800 hover:bg-violet-600 transition-colors ease-in-out duration-200 px-2 py-2"
                     >
                       add to cart
                     </button>
