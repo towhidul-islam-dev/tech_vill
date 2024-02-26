@@ -17,13 +17,13 @@ function IdenticalProduct({ categoryData }) {
             return (
               <div
                 key={product.id}
-                className=" p-4 border border-violet-200 hover:border-gray-300 hover:shadow-md rounded-lg space-y-4"
+                className=" p-4 border border-violet-200 hover:border-gray-300 hover:shadow-md rounded-lg space-y-4 group"
               >
                 <Link
                   href={`/product/${product.id}?category=${product.category}`}
                 >
                   <div className="">
-                    <div className="">
+                    <div className="group-hover:scale-105 transition-transform ease-in-out duration-200">
                       <img
                         className="aspect-square rounded-lg w-full"
                         src={`${product.images[0]}`}

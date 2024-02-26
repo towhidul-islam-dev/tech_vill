@@ -45,7 +45,7 @@ const Cart = () => {
   return (
     <div className="relative px-4 xl:px-0 pb-8 lg:pb-20">
       <div className="grid place-items-center pt-2 sm:pt-28">
-        <div className=" md:grid max-w-7xl w-full gap-24 md:grid-cols-productLayout ">
+        <div className=" md:grid max-w-7xl min-h-[500px] w-full gap-24 md:grid-cols-productLayout ">
           <div className="pb-8 md:pb-0">
             <div className="flex flex-col items-start justify-between gap-4 mb-8 w-max">
               <h2 className="text-2xl font-bold text-left capitalize cartTitle ms:text-4xl text-violet-900">
@@ -93,9 +93,24 @@ const Cart = () => {
                           <h2 className="py-1 text-small font-light text-left capitalize text-natural2 md:text-base">
                             {category}
                           </h2>
-                          <h2 className="text-xl font-bold text-left capitalize text-violet-900 md:text-base">
-                            ${price}
-                          </h2>
+                          <div className="flex gap-2">
+                            <div className="">
+                              <span>
+                                <p className="text-small text-gray-400 font-semibold">Main Price</p>
+                              </span>
+                              <p className="text-xl font-bold text-left capitalize text-violet-900 md:text-base ">
+                                ${price}
+                              </p>
+                            </div>
+                            <div className="">
+                              <span>
+                                <p className="text-small text-gray-400 font-semibold">Updated Price</p>
+                              </span>
+                              <p className="text-xl font-bold text-left capitalize text-violet-900 md:text-base">
+                                ${price * quantity}
+                              </p>
+                            </div>
+                          </div>
                         </div>
                       </div>
                       <div>
