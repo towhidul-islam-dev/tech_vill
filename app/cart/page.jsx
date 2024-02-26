@@ -96,7 +96,9 @@ const Cart = () => {
                           <div className="flex gap-2">
                             <div className="">
                               <span>
-                                <p className="text-small text-gray-400 font-semibold">Main Price</p>
+                                <p className="text-small text-gray-400 font-semibold">
+                                  Main Price
+                                </p>
                               </span>
                               <p className="text-xl font-bold text-left capitalize text-violet-900 md:text-base ">
                                 ${price}
@@ -104,7 +106,9 @@ const Cart = () => {
                             </div>
                             <div className="">
                               <span>
-                                <p className="text-small text-gray-400 font-semibold">Total Price</p>
+                                <p className="text-small text-gray-400 font-semibold">
+                                  Total Price
+                                </p>
                               </span>
                               <p className="text-xl font-bold text-left capitalize text-violet-900 md:text-base">
                                 ${price * quantity}
@@ -156,7 +160,7 @@ const Cart = () => {
             )}
           </div>
 
-          <div className="flex flex-col items-start max-h-max">
+          <div className="flex flex-col items-start max-h-max pb-7 md:pb-0">
             <div className="w-full pb-4 mb-2 border-b border-gray-500">
               <div className="flex items-center justify-between gap-4">
                 <h2 className="text-base font-medium text-left capitalize">
@@ -177,13 +181,18 @@ const Cart = () => {
             </div>
             <div className="flex items-center justify-between w-full gap-4">
               <h2 className="text-base font-bold text-left capitalize align-baseline text-violet-900 md:text-xl">
-                total
+                total price
               </h2>
               <h2 className="text-base font-bold text-left capitalize text-violet-900 md:text-xl">
                 {cart?.length > 0
                   ? `$ ${(+total + 3.45).toFixed(2)}`
                   : `$ ${0.0}`}
               </h2>
+            </div>
+            <div className="w-full pt-6">
+              <button className="w-full rounded-lg text-gray-50 uppercase hover:font-semibold p-2 bg-violet-800 hover:bg-violet-700 transition-all ease-in-out duration-200">
+Checkout now
+              </button>
             </div>
           </div>
         </div>

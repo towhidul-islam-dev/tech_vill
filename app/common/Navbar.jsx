@@ -65,7 +65,7 @@ const Navbar = () => {
         </ul>
         <div
           onClick={() => setNav(!nav)}
-          className="cursor-pointer pr-4 z-40 text-gray-500 md:hidden"
+          className="cursor-pointer pr-4 z-50 text-gray-500 md:hidden"
         >
           {nav ? (
             <XMarkIcon className="w-7 h-7 text-gray-700" />
@@ -74,7 +74,7 @@ const Navbar = () => {
           )}
         </div>
         {nav && (
-          <ul className="flex flex-col justify-center items-center absolute top-0 z-30 left-0 w-full h-screen bg-gradient-to-b from-white to-gray-100 text-gray-500">
+          <ul className="flex flex-col justify-center items-center absolute top-0 z-40 left-0 w-full h-screen bg-gradient-to-b from-white to-gray-100 text-gray-500">
             {links.map(({ id, link, route }) => (
               <li
                 key={id}

@@ -78,7 +78,7 @@ function Product({
                     href={`/product/${product.id}?category=${product.category}`}
                     className="z-10 space-y-4 lg:flex lg:justify-between lg:gap-4"
                   >
-                    <div className="lg:max-w-32 transition-transform group-hover:scale-105 ease-in-out duration-200">
+                    <div className="lg:max-w-32 transition-transform group-hover:scale-105 ease-in-out duration-200 rounded-md overflow-hidden">
                       <Image
                         className="w-full aspect-square"
                         src={`${product.images[0]}`}
@@ -132,7 +132,7 @@ function Product({
                     href={`/product/${product.id}?category=${product.category}`}
                     className="z-10 space-y-4 rounded-lg lg:flex lg:justify-between lg:gap-4"
                   >
-                    <div className="lg:max-w-32 group-hover:scale-105 transition-transform ease-in-out duration-200">
+                    <div className="lg:max-w-32 group-hover:scale-105 transition-transform ease-in-out duration-200 rounded-md overflow-hidden">
                       <Image
                         className="w-full rounded-lg aspect-square"
                         src={`${product.images[0]}`}
@@ -186,7 +186,7 @@ function Product({
                   href={`/product/${product.id}?category=${product.category}`}
                   className="z-10 space-y-4 lg:flex lg:justify-between lg:gap-4"
                 >
-                  <div className="lg:max-w-32 group-hover:scale-105 transition-transform ease-in-out duration-200">
+                  <div className="lg:max-w-32 group-hover:scale-105 transition-transform ease-in-out duration-200 rounded-md overflow-hidden">
                     <Image
                       className="w-full aspect-square"
                       src={`${product.images[0]}`}
