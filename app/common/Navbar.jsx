@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React, { useContext, useState } from "react";
+import { useRouter, usePathname } from "next/navigation";
 import {
   SwatchIcon,
   XMarkIcon,
@@ -11,6 +12,7 @@ import CartContextProvider from "@/context/CartContext";
 const Navbar = () => {
   const { cart } = useContext(CartContextProvider);
   const [nav, setNav] = useState(false);
+  const param = usePathname();
 
   const links = [
     {
@@ -43,7 +45,11 @@ const Navbar = () => {
           {links.map(({ id, link, route }) => (
             <li
               key={id}
-              className=" px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-105 hover:text-gray-600 duration-200 link-underline"
+              className={
+                route === param
+                  ? "px-4 cursor-pointer capitalize font-medium text-violet-700 hover:scale-105 hover:text-violet-500 duration-200 link-underline"
+                  : " px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-105 hover:text-gray-600 duration-200 link-underline"
+              }
             >
               <Link href={route}>
                 {link === "ShoppingCartIcon" ? (
@@ -68,9 +74,9 @@ const Navbar = () => {
           className="cursor-pointer pr-4 z-50 text-gray-500 md:hidden"
         >
           {nav ? (
-            <XMarkIcon className="w-7 h-7 text-gray-700" />
+            <XMarkIcon className="w-7 h-7 text-violet-900" />
           ) : (
-            <BarsArrowDownIcon className="w-7 h-7 text-gray-700" />
+            <BarsArrowDownIcon className="w-7 h-7 text-violet-900" />
           )}
         </div>
         {nav && (
@@ -78,7 +84,11 @@ const Navbar = () => {
             {links.map(({ id, link, route }) => (
               <li
                 key={id}
-                className="px-4 w-full max-w-sm cursor-pointer capitalize py-6 text-xl"
+                className={
+                  route === param
+                    ? "px-4 w-full max-w-sm cursor-pointer text-violet-700 hover:text-violet-500 capitalize py-6 text-xl"
+                    : "px-4 w-full max-w-sm cursor-pointer hover:text-gray-900 capitalize py-6 text-xl"
+                }
               >
                 <Link onClick={() => setNav(!nav)} href={route}>
                   {link === "ShoppingCartIcon" ? (
