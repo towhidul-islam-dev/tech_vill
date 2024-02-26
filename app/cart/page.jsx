@@ -13,7 +13,7 @@ import Modal from "../cart/common/Modal";
 
 const Cart = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const { cart, setCart } = useContext(CartContextProvider);
+  const { cart, setCart, setCheckOutProduct } = useContext(CartContextProvider);
   const [uniqueCart, setUniqueCart] = useState([]);
 
   const deleteItem = () => {
@@ -41,6 +41,12 @@ const Cart = () => {
   const total = cart
     .reduce((total, item) => total + item.quantity * item.price, 0)
     .toFixed(2);
+
+  const checkout = () => {
+    setCheckOutProduct(cart);
+    toast.success("Order Placed Successfully");
+    console.log("checkout button");
+  };
 
   return (
     <div className="relative px-4 xl:px-0 pb-8 lg:pb-20">
@@ -190,8 +196,11 @@ const Cart = () => {
               </h2>
             </div>
             <div className="w-full pt-6">
-              <button className="w-full rounded-lg text-gray-50 uppercase hover:font-semibold p-2 bg-violet-800 hover:bg-violet-700 transition-all ease-in-out duration-200">
-Checkout now
+              <button
+                onClick={checkout}
+                className="w-full rounded-lg text-gray-50 uppercase hover:font-semibold p-2 bg-violet-800 hover:bg-violet-700 transition-all ease-in-out duration-200"
+              >
+                Checkout now
               </button>
             </div>
           </div>

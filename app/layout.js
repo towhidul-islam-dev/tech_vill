@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import { Toaster } from 'react-hot-toast'
 
 import { CartContext } from "../context/CartContext";
 import Footer from "./common/Footer";
@@ -27,6 +28,7 @@ export default function Layout({ children }) {
               <Navbar />
             </div>
             {children}
+            <Toaster/>
             <Footer />
           </QueryClientProvider>
         </CartContext>

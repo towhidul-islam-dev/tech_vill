@@ -4,7 +4,7 @@ import React from "react";
 import Ring from "../../../public/img13.jpg";
 function CategoryProductCardCenter() {
   return (
-    <div className="sm:grid sm:grid-cols-6 sm:gap-4 bg-gray-100">
+    <div className="rounded-md sm:grid sm:grid-cols-6 sm:gap-4 bg-gray-100 overflow-hidden">
       <div className="sm:col-span-3 p-12 grid place-items-center">
         <Image
           className=""
@@ -16,8 +16,8 @@ function CategoryProductCardCenter() {
       </div>
       <div className="grid place-items-center sm:col-span-3 space-y-8 lg:space-y-0 bg-gray-200 p-4">
         <div className="text-center">
-          <h2>Bracelet</h2>
-          <p>Made with care.</p>
+          <h2 className="text-xl font-bold">Earrings</h2>
+          <p>Made with passion.</p>
         </div>
         <div className="w-20 h-1 bg-violet-900"></div>
         <p className="text-center">
@@ -28,7 +28,7 @@ function CategoryProductCardCenter() {
         <div className="">
           <button
             type="button"
-            className="text-base border border-violet-900 text-violet-900 hover:bg-violet-900 hover:text-gray-50 py-1 px-2"
+            className="transition-colors duration-200 ease-in-out text-base border border-violet-900 text-violet-900 hover:bg-violet-900 hover:text-gray-50 py-1 px-2"
           >
             view all
           </button>

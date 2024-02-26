@@ -51,7 +51,6 @@ function Product({
     const addIntendentproduct = data?.products?.find(
       (product) => product.id === id
     );
-    setUnFilteredCart((prevItem) => [...prevItem, addIntendentproduct]);
     addToCart(addIntendentproduct);
   };
 
