@@ -65,7 +65,7 @@ function Product({
   }, [ctry]);
 
   return (
-    <div className="grid gap-3 md:gap-4 min-h-[600px] grid-cols-productLayout lg:grid-cols-1 w-full pb-8">
+    <div className="grid gap-3 md:gap-4 min-h-[600px] grid-cols-productLayout lg:grid-cols-1 pb-8 w-full lg:max-w-7xl">
       {ctry === "default"
         ? sortData === "default"
           ? data?.products?.map((product) => {

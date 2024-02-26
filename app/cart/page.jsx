@@ -6,10 +6,10 @@ import Image from "next/image";
 import { toast } from "react-hot-toast";
 
 import AddToCart from "../../public/undraw_shopping_app_flsj.svg";
-import CartContextProvider from "../../context/CartContext";
-import { HiArchiveBoxXMark } from "react-icons/hi2";
-import Modal from "../cart/common/Modal";
 import Counter from "../components/Counter";
+import CartContextProvider from "../../context/CartContext";
+import { TrashIcon } from "@heroicons/react/24/outline";
+import Modal from "../cart/common/Modal";
 
 const Cart = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -62,7 +62,7 @@ const Cart = () => {
               >
                 Delete All{" "}
                 <span className="flex items-center justify-center rounded-full bg-[#fafafa] p-1 backdrop-blur-sm">
-                  <HiArchiveBoxXMark className="text-xl hover:animate-shake text-denger" />
+                  <TrashIcon className="w-5 h-5 hover:animate-shake text-denger" />
                 </span>
               </button>
             </div>
@@ -104,7 +104,7 @@ const Cart = () => {
                             </div>
                             <div className="">
                               <span>
-                                <p className="text-small text-gray-400 font-semibold">Updated Price</p>
+                                <p className="text-small text-gray-400 font-semibold">Total Price</p>
                               </span>
                               <p className="text-xl font-bold text-left capitalize text-violet-900 md:text-base">
                                 ${price * quantity}
@@ -120,7 +120,7 @@ const Cart = () => {
                               onClick={() => deleteCartItem(id)}
                               className="mb-2 cursor-pointer"
                             >
-                              <HiArchiveBoxXMark className="text-xl text-denger" />
+                              <TrashIcon className=" text-denger w-4 h-4" />
                             </button>
                           </div>
 
