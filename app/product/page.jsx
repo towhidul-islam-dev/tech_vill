@@ -20,7 +20,7 @@ const sortOptions = [
 
 function ProductPage() {
   const [categoryProduct, setCategoryProduct] = useState([]);
-  const params = useSearchParams().get("category");
+  // const params = useSearchParams().get("category");
 
   const categories = getUniqueObjects(categoryProduct, "category");
   const [selectedOption, setSelectedOption] = useState(null);
