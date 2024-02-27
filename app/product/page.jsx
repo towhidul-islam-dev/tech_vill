@@ -8,6 +8,7 @@ import CartContextProvider from "../../context/CartContext";
 import Category from "./components/Category";
 import Product from "./components/Product";
 import SortProduct from "./components/SortingProduct";
+import { useSearchParams } from "next/navigation";
 
 const sortOptions = [
   { id: 1, name: "default", value: "default" },
@@ -19,6 +20,7 @@ const sortOptions = [
 
 function ProductPage() {
   const [categoryProduct, setCategoryProduct] = useState([]);
+  const params = useSearchParams().get("category");
 
   const categories = getUniqueObjects(categoryProduct, "category");
   const [selectedOption, setSelectedOption] = useState(null);
@@ -68,6 +70,9 @@ function ProductPage() {
     setSelectedOption("default");
     setSortData("default");
   }, []);
+  useEffect(() =>{
+    params && setSelectedOption(params)
+  },[params])
 
   return (
     <div className="grid px-6 pt-8 sm:pt-28 place-items-center space-y-7">
