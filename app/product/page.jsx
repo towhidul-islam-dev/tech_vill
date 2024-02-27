@@ -21,8 +21,6 @@ const sortOptions = [
 
 function ProductPage() {
   const [categoryProduct, setCategoryProduct] = useState([]);
-  /* const params = useSearchParams().get("category");
-  console.log(params);  */
   let params = "";
 
   const categories = getUniqueObjects(categoryProduct, "category");
@@ -78,8 +76,7 @@ function ProductPage() {
     const searchParams = new URLSearchParams(window.location.search);
     params = searchParams.get("category");
   }
-console.log(params);
-    useEffect(() => {
+  useEffect(() => {
     params && setSelectedOption(params);
   }, [params]);
 
