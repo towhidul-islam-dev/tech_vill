@@ -10,7 +10,7 @@ function CategoryProductCard() {
     <div className="sm:grid sm:grid-cols-6 sm:gap-4 bg-gray-100 rounded-md overflow-hidden">
       <div className="sm:col-span-3 md:col-span-4 p-12 grid place-items-center ">
         <Image
-          className="rounded-md "
+          className="rounded-md"
           src={Bracelet}
           alt="Bracelet"
           width={400}
@@ -19,7 +19,7 @@ function CategoryProductCard() {
       </div>
       <div className="grid place-items-center sm:col-span-3 md:col-span-2 space-y-8 lg:space-y-0 bg-gray-200 p-4">
         <div className="text-center">
-          <h2 className="text-xl font-bold">Phone Charm</h2>
+          <h2 className="text-xl font-bold">Mens-watches</h2>
           <p>Made with love.</p>
         </div>
         <div className="w-20 h-1 bg-violet-900"></div>

@@ -36,7 +36,7 @@ function IdenticalProduct({ categoryData }) {
                         alt={product.title}
                       />
                     </div>
-                    <div className="flex flex-col lg:w-full lg:max-w-xl xl:max-w-4xl lg:justify-start">
+                    <div className="flex flex-col lg:w-full lg:max-w-xl xl:max-w-4xl lg:justify-start pt-3">
                       <div>
                         <h2 className="text-xl font-semibold line-clamp-1">
                           {product.title}

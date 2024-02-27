@@ -66,8 +66,6 @@ function Product({
     categoryData(data);
   }, [ctry]);
 
-  console.log(cart);
-
   return (
     <div className="grid gap-3 md:gap-4 min-h-[600px] grid-cols-productLayout lg:grid-cols-1 pb-8 w-full lg:max-w-7xl">
       {ctry === "default"
