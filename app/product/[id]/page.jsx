@@ -1,9 +1,11 @@
 "use client";
-import React, { useState,useContext } from "react";
+import React, { useState, useContext } from "react";
 import { useParams, useSearchParams } from "next/navigation";
 import Link from "next/link";
 
 import { useQuery } from "@tanstack/react-query";
+
+import { toast } from "react-hot-toast";
 
 import {
   ShareIcon,
@@ -18,7 +20,7 @@ function ProductPage() {
   const params = +useParams().id;
   const categoryParams = useSearchParams().get("category");
   const [relatedProduct, setRelatedProduct] = useState([]);
-  const {addToCart} = useContext(CartContextProvider);
+  const { addToCart } = useContext(CartContextProvider);
 
   const fetchingSpecificData = async () => {
     const res = await fetch("https://dummyjson.com/products?limit=90");
@@ -43,6 +45,11 @@ function ProductPage() {
     queryKey: ["specific Data"],
     queryFn: fetchingSpecificData,
   });
+
+  const addProductToCart = () => {
+    addToCart(data)
+    toast.success("Product added successfully")
+  };
 
   return (
     <div className="flex sm:items-center sm:justify-center flex-col px-6 pt-1 sm:pt-20">
@@ -84,7 +91,10 @@ function ProductPage() {
               <h2 className="text-xl font-semibold">${data?.price}</h2>
             </div>
             <div>
-              <button className="text-sm capitalize text-gray-100 rounded-md bg-violet-800 px-4 py-2" onClick={() => addToCart(data)}>
+              <button
+                className="text-sm capitalize text-gray-100 rounded-md bg-violet-800 px-4 py-2"
+                onClick={() => addProductToCart(data)}
+              >
                 add to cart
               </button>
             </div>

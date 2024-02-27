@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
+import {toast} from "react-hot-toast"
+
 const sortProductData = (arr, property) => {
   let data = [];
 
@@ -52,6 +54,7 @@ function Product({
       (product) => product.id === id
     );
     addToCart(addIntendentproduct);
+    toast.success("Product added successfully")
   };
 
   useEffect(() => {
@@ -62,6 +65,8 @@ function Product({
   useEffect(() => {
     categoryData(data);
   }, [ctry]);
+
+  console.log(cart);
 
   return (
     <div className="grid gap-3 md:gap-4 min-h-[600px] grid-cols-productLayout lg:grid-cols-1 pb-8 w-full lg:max-w-7xl">

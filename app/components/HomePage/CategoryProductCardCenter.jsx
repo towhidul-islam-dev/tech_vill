@@ -19,8 +19,8 @@ function CategoryProductCardCenter() {
       </div>
       <div className="grid place-items-center sm:col-span-3 space-y-8 lg:space-y-0 bg-gray-200 p-4">
         <div className="text-center">
-          <h2 className="text-xl font-bold">Earrings</h2>
-          <p>Made with passion.</p>
+          <h2 className="text-xl font-bold">Automotives</h2>
+          <p>Chese your dreem</p>
         </div>
         <div className="w-20 h-1 bg-violet-900"></div>
         <p className="text-center">

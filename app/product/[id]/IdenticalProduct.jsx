@@ -1,11 +1,17 @@
 import React, { useContext, useState } from "react";
 import Link from "next/link";
 
+import toast from "react-hot-toast";
+
 import CartContextProvider from "@/context/CartContext";
 
 function IdenticalProduct({ categoryData }) {
   const { addToCart } = useContext(CartContextProvider);
 
+  const addProductToCart = (data) =>{
+    addToCart(data)
+    toast.success("Product added successfully")
+  }
   return (
     <div className="my-28 w-full grid place-items-center">
       <h2 className="text-4xl font-bold pb-1 border-b w-full max-w-7xl border-violet-100 mb-12 text-center">
@@ -56,7 +62,7 @@ function IdenticalProduct({ categoryData }) {
                   </div>
                   <div>
                     <button
-                      onClick={() => addToCart(product)}
+                      onClick={() => addProductToCart(product)}
                       className="text-small font-bold capitalize text-gray-100 rounded-md bg-violet-800 hover:bg-violet-600 transition-colors ease-in-out duration-200 px-2 py-2"
                     >
                       add to cart

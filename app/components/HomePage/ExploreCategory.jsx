@@ -27,6 +27,7 @@ import Image21 from "../../../public/CATEGORY_IMAGE/women_shoes.jpg";
 import Image22 from "../../../public/CATEGORY_IMAGE/women_skincare.jpg";
 import Image23 from "../../../public/CATEGORY_IMAGE/women_watch.jpg";
 import Image24 from "../../../public/CATEGORY_IMAGE/tops.jpg";
+import Image25 from "../../../public/CATEGORY_IMAGE/womens-dresses.jpg";
 
 function ExploreCategory() {
   const params = useRouter();
@@ -51,7 +52,10 @@ function ExploreCategory() {
               <p className="pb-4 capitalize font-bold text-xl text-center">
                 fragrances
               </p>
-              <button onClick={() => params.push("/product?category=fragrances")}  className="py-2 text-sm uppercase border text-violet-900 font-semibold hover:text-gray-50 px-4 rounded-lg border-violet-900 hover:bg-violet-900 transition-all ease-in-out duration-200">
+              <button
+                onClick={() => params.push("/product?category=fragrances")}
+                className="py-2 text-sm uppercase border text-violet-900 font-semibold hover:text-gray-50 px-4 rounded-lg border-violet-900 hover:bg-violet-900 transition-all ease-in-out duration-200"
+              >
                 view all
               </button>
             </div>
@@ -74,7 +78,10 @@ function ExploreCategory() {
               <p className="pb-4 capitalize font-bold text-xl text-center">
                 Groceries
               </p>
-              <button onClick={() => params.push("/product?category=groceries")}  className="py-2 text-sm uppercase border text-violet-900 font-semibold hover:text-gray-50 px-4 rounded-lg border-violet-900 hover:bg-violet-900 transition-all ease-in-out duration-200">
+              <button
+                onClick={() => params.push("/product?category=groceries")}
+                className="py-2 text-sm uppercase border text-violet-900 font-semibold hover:text-gray-50 px-4 rounded-lg border-violet-900 hover:bg-violet-900 transition-all ease-in-out duration-200"
+              >
                 view all
               </button>
             </div>
@@ -94,7 +101,10 @@ function ExploreCategory() {
               <p className="pb-4 capitalize font-bold text-xl text-center">
                 automotive
               </p>
-              <button onClick={() => params.push("/product?category=automotive")} className="py-2 text-sm uppercase border text-violet-900 font-semibold hover:text-gray-50 px-4 rounded-lg border-violet-900 hover:bg-violet-900 transition-all ease-in-out duration-200">
+              <button
+                onClick={() => params.push("/product?category=automotive")}
+                className="py-2 text-sm uppercase border text-violet-900 font-semibold hover:text-gray-50 px-4 rounded-lg border-violet-900 hover:bg-violet-900 transition-all ease-in-out duration-200"
+              >
                 view all
               </button>
             </div>
@@ -117,7 +127,10 @@ function ExploreCategory() {
               <p className="pb-4 capitalize font-bold text-xl text-center">
                 furniture
               </p>
-              <button onClick={() => params.push("/product?category=furniture")} className="py-2 text-sm uppercase border text-violet-900 font-semibold hover:text-gray-50 px-4 rounded-lg border-violet-900 hover:bg-violet-900 transition-all ease-in-out duration-200">
+              <button
+                onClick={() => params.push("/product?category=furniture")}
+                className="py-2 text-sm uppercase border text-violet-900 font-semibold hover:text-gray-50 px-4 rounded-lg border-violet-900 hover:bg-violet-900 transition-all ease-in-out duration-200"
+              >
                 view all
               </button>
             </div>
@@ -138,19 +151,21 @@ function ExploreCategory() {
           <div className="hidden group-hover:block group-hover:transition-all group-hover:ease-in-out group-hover:duration-300">
             <div className="absolute rounded-md inset-1/2 w-full backdrop-blur-md backdrop-brightness-90 backdrop-contrast-125 -translate-x-1/2 bg-gray-300/30  h-full grid place-content-center -translate-y-1/2">
               <p className="pb-4 capitalize font-bold text-xl text-center">
-                womens-jewellry
+                womens-jewellery
               </p>
-              <button onClick={() => params.push("/product?category=womens-jewellry")} className="py-2 text-sm uppercase border text-violet-900 font-semibold hover:text-gray-50 px-4 rounded-lg border-violet-900 hover:bg-violet-900 transition-all ease-in-out duration-200">
+              <button
+                onClick={() =>
+                  params.push("/product?category=womens-jewellery")
+                }
+                className="py-2 text-sm uppercase border text-violet-900 font-semibold hover:text-gray-50 px-4 rounded-lg border-violet-900 hover:bg-violet-900 transition-all ease-in-out duration-200"
+              >
                 view all
               </button>
             </div>
           </div>
         </div>
         {/* $6 */}
-        <div
-          type="button"
-          className="max-h-[300px] sm:col-span-2 relative group"
-        >
+        <div className="max-h-[300px] sm:col-span-2 relative group">
           <Image
             className="w-full h-full rounded-lg object-cover"
             src={Image6}
@@ -161,9 +176,12 @@ function ExploreCategory() {
           <div className="hidden group-hover:block group-hover:transition-all group-hover:ease-in-out group-hover:duration-300">
             <div className="absolute rounded-md inset-1/2 w-full backdrop-blur-md backdrop-brightness-90 backdrop-contrast-125 -translate-x-1/2 bg-gray-300/30  h-full grid place-content-center -translate-y-1/2">
               <p className="pb-4 capitalize font-bold text-xl text-center">
-                women jewellry
+                women bags
               </p>
-              <button className="py-2 text-sm uppercase border text-violet-900 font-semibold hover:text-gray-50 px-4 rounded-lg border-violet-900 hover:bg-violet-900 transition-all ease-in-out duration-200">
+              <button
+                onClick={() => params.push("/product?category=womens-bags")}
+                className="py-2 text-sm uppercase border text-violet-900 font-semibold hover:text-gray-50 px-4 rounded-lg border-violet-900 hover:bg-violet-900 transition-all ease-in-out duration-200"
+              >
                 view all
               </button>
             </div>
@@ -183,7 +201,10 @@ function ExploreCategory() {
               <p className="pb-4 capitalize font-bold text-xl text-center">
                 laptops
               </p>
-              <button onClick={() => params.push("/product?category=laptops")} className="py-2 text-sm uppercase border text-violet-900 font-semibold hover:text-gray-50 px-4 rounded-lg border-violet-900 hover:bg-violet-900 transition-all ease-in-out duration-200">
+              <button
+                onClick={() => params.push("/product?category=laptops")}
+                className="py-2 text-sm uppercase border text-violet-900 font-semibold hover:text-gray-50 px-4 rounded-lg border-violet-900 hover:bg-violet-900 transition-all ease-in-out duration-200"
+              >
                 view all
               </button>
             </div>
@@ -223,27 +244,10 @@ function ExploreCategory() {
               <p className="pb-4 capitalize font-bold text-xl text-center">
                 mens-watches
               </p>
-              <button onClick={() => params.push("/product?category=mens-watches")} className="py-2 text-sm uppercase border text-violet-900 font-semibold hover:text-gray-50 px-4 rounded-lg border-violet-900 hover:bg-violet-900 transition-all ease-in-out duration-200">
-                view all
-              </button>
-            </div>
-          </div>
-        </div>
-        {/* $10 */}
-        <div className="relative group max-h-[300px]  sm:row-start-3 sm:col-span-3 ">
-          <Image
-            className="w-full h-full rounded-lg object-cover"
-            src={Image10}
-            alt="Image10"
-            width={700}
-            height={200}
-          ></Image>
-          <div className="hidden group-hover:block group-hover:transition-all group-hover:ease-in-out group-hover:duration-300">
-            <div className="absolute rounded-md inset-1/2 w-full backdrop-blur-md backdrop-brightness-90 backdrop-contrast-125 -translate-x-1/2 bg-gray-300/30  h-full grid place-content-center -translate-y-1/2">
-              <p className="pb-4 capitalize font-bold text-xl text-center">
-                men's bags
-              </p>
-              <button className="py-2 text-sm uppercase border text-violet-900 font-semibold hover:text-gray-50 px-4 rounded-lg border-violet-900 hover:bg-violet-900 transition-all ease-in-out duration-200">
+              <button
+                onClick={() => params.push("/product?category=mens-watches")}
+                className="py-2 text-sm uppercase border text-violet-900 font-semibold hover:text-gray-50 px-4 rounded-lg border-violet-900 hover:bg-violet-900 transition-all ease-in-out duration-200"
+              >
                 view all
               </button>
             </div>
@@ -263,7 +267,10 @@ function ExploreCategory() {
               <p className="pb-4 capitalize font-bold text-xl text-center">
                 mens-shirts
               </p>
-              <button onClick={() => params.push("/product?category=mens-shirts")} className="py-2 text-sm uppercase border text-violet-900 font-semibold hover:text-gray-50 px-4 rounded-lg border-violet-900 hover:bg-violet-900 transition-all ease-in-out duration-200">
+              <button
+                onClick={() => params.push("/product?category=mens-shirts")}
+                className="py-2 text-sm uppercase border text-violet-900 font-semibold hover:text-gray-50 px-4 rounded-lg border-violet-900 hover:bg-violet-900 transition-all ease-in-out duration-200"
+              >
                 view all
               </button>
             </div>
@@ -283,14 +290,17 @@ function ExploreCategory() {
               <p className="pb-4 capitalize font-bold text-xl text-center">
                 mens-shoes
               </p>
-              <button onClick={() => params.push("/product?category=mens-shoes")} className="py-2 text-sm uppercase border text-violet-900 font-semibold hover:text-gray-50 px-4 rounded-lg border-violet-900 hover:bg-violet-900 transition-all ease-in-out duration-200">
+              <button
+                onClick={() => params.push("/product?category=mens-shoes")}
+                className="py-2 text-sm uppercase border text-violet-900 font-semibold hover:text-gray-50 px-4 rounded-lg border-violet-900 hover:bg-violet-900 transition-all ease-in-out duration-200"
+              >
                 view all
               </button>
             </div>
           </div>
         </div>
         {/* $13 */}
-        <div className="relative group max-h-[300px] ">
+        <div className="relative group sm:col-start-8 sm:col-end-9 sm:row-start-3 sm:row-end-5">
           <Image
             className="w-full h-full rounded-lg object-cover"
             src={Image24}
@@ -303,7 +313,10 @@ function ExploreCategory() {
               <p className="pb-4 capitalize font-bold text-xl text-center">
                 tops
               </p>
-              <button onClick={() => params.push("/product?category=tops")} className="py-2 text-sm uppercase border text-violet-900 font-semibold hover:text-gray-50 px-4 rounded-lg border-violet-900 hover:bg-violet-900 transition-all ease-in-out duration-200">
+              <button
+                onClick={() => params.push("/product?category=tops")}
+                className="py-2 text-sm uppercase border text-violet-900 font-semibold hover:text-gray-50 px-4 rounded-lg border-violet-900 hover:bg-violet-900 transition-all ease-in-out duration-200"
+              >
                 view all
               </button>
             </div>
@@ -323,7 +336,10 @@ function ExploreCategory() {
               <p className="pb-4 capitalize font-bold text-xl text-center">
                 smathphones
               </p>
-              <button onClick={() => params.push("/product?category=smartphones")} className="py-2 text-sm uppercase border text-violet-900 font-semibold hover:text-gray-50 px-4 rounded-lg border-violet-900 hover:bg-violet-900 transition-all ease-in-out duration-200">
+              <button
+                onClick={() => params.push("/product?category=smartphones")}
+                className="py-2 text-sm uppercase border text-violet-900 font-semibold hover:text-gray-50 px-4 rounded-lg border-violet-900 hover:bg-violet-900 transition-all ease-in-out duration-200"
+              >
                 view all
               </button>
             </div>
@@ -343,7 +359,10 @@ function ExploreCategory() {
               <p className="pb-4 capitalize font-bold text-xl text-center">
                 sunglasses
               </p>
-              <button onClick={() => params.push("/product?category=sunglasses")} className="py-2 text-sm uppercase border text-violet-900 font-semibold hover:text-gray-50 px-4 rounded-lg border-violet-900 hover:bg-violet-900 transition-all ease-in-out duration-200">
+              <button
+                onClick={() => params.push("/product?category=sunglasses")}
+                className="py-2 text-sm uppercase border text-violet-900 font-semibold hover:text-gray-50 px-4 rounded-lg border-violet-900 hover:bg-violet-900 transition-all ease-in-out duration-200"
+              >
                 view all
               </button>
             </div>
@@ -363,7 +382,10 @@ function ExploreCategory() {
               <p className="pb-4 capitalize font-bold text-xl text-center">
                 womens-bags
               </p>
-              <button onClick={() => params.push("/product?category=womens-bags")} className="py-2 text-sm uppercase border text-violet-900 font-semibold hover:text-gray-50 px-4 rounded-lg border-violet-900 hover:bg-violet-900 transition-all ease-in-out duration-200">
+              <button
+                onClick={() => params.push("/product?category=womens-bags")}
+                className="py-2 text-sm uppercase border text-violet-900 font-semibold hover:text-gray-50 px-4 rounded-lg border-violet-900 hover:bg-violet-900 transition-all ease-in-out duration-200"
+              >
                 view all
               </button>
             </div>
@@ -383,7 +405,10 @@ function ExploreCategory() {
               <p className="pb-4 capitalize font-bold text-xl text-center">
                 womens-shoes
               </p>
-              <button onClick={() => params.push("/product?category=womens-shoes")} className="py-2 text-sm uppercase border text-violet-900 font-semibold hover:text-gray-50 px-4 rounded-lg border-violet-900 hover:bg-violet-900 transition-all ease-in-out duration-200">
+              <button
+                onClick={() => params.push("/product?category=womens-shoes")}
+                className="py-2 text-sm uppercase border text-violet-900 font-semibold hover:text-gray-50 px-4 rounded-lg border-violet-900 hover:bg-violet-900 transition-all ease-in-out duration-200"
+              >
                 view all
               </button>
             </div>
@@ -393,8 +418,8 @@ function ExploreCategory() {
         <div className="max-h-[300px]  sm:col-span-2 relative group">
           <Image
             className="w-full h-full rounded-lg object-cover"
-            src={Image18}
-            alt="Image18"
+            src={Image25}
+            alt="Image25"
             width={700}
             height={200}
           ></Image>
@@ -403,14 +428,17 @@ function ExploreCategory() {
               <p className="pb-4 capitalize font-bold text-xl text-center">
                 womens-dresses
               </p>
-              <button onClick={() => params.push("/product?category=womens-dresses")} className="py-2 text-sm uppercase border text-violet-900 font-semibold hover:text-gray-50 px-4 rounded-lg border-violet-900 hover:bg-violet-900 transition-all ease-in-out duration-200">
+              <button
+                onClick={() => params.push("/product?category=womens-dresses")}
+                className="py-2 text-sm uppercase border text-violet-900 font-semibold hover:text-gray-50 px-4 rounded-lg border-violet-900 hover:bg-violet-900 transition-all ease-in-out duration-200"
+              >
                 view all
               </button>
             </div>
           </div>
         </div>
         {/* $19 */}
-        <div className="relative group max-h-[300px] ">
+        <div className="relative group max-h-[300px] sm:col-span-3">
           <Image
             className="w-full h-full rounded-lg object-cover"
             src={Image22}
@@ -423,27 +451,10 @@ function ExploreCategory() {
               <p className="pb-4 capitalize font-bold text-xl text-center">
                 skincare
               </p>
-              <button onClick={() => params.push("/product?category=skincare")} className="py-2 text-sm uppercase border text-violet-900 font-semibold hover:text-gray-50 px-4 rounded-lg border-violet-900 hover:bg-violet-900 transition-all ease-in-out duration-200">
-                view all
-              </button>
-            </div>
-          </div>
-        </div>
-        {/* $20 */}
-        <div className="relative group max-h-[300px] sm:col-span-3 ">
-          <Image
-            className="w-full h-full rounded-lg object-cover"
-            src={Image20}
-            alt="Image20"
-            width={700}
-            height={200}
-          ></Image>
-          <div className="hidden group-hover:block group-hover:transition-all group-hover:ease-in-out group-hover:duration-300">
-            <div className="absolute rounded-md inset-1/2 w-full backdrop-blur-md backdrop-brightness-90 backdrop-contrast-125 -translate-x-1/2 bg-gray-300/30  h-full grid place-content-center -translate-y-1/2">
-              <p className="pb-4 capitalize font-bold text-xl text-center">
-                perfume
-              </p>
-              <button className="py-2 text-sm uppercase border text-violet-900 font-semibold hover:text-gray-50 px-4 rounded-lg border-violet-900 hover:bg-violet-900 transition-all ease-in-out duration-200">
+              <button
+                onClick={() => params.push("/product?category=skincare")}
+                className="py-2 text-sm uppercase border text-violet-900 font-semibold hover:text-gray-50 px-4 rounded-lg border-violet-900 hover:bg-violet-900 transition-all ease-in-out duration-200"
+              >
                 view all
               </button>
             </div>
