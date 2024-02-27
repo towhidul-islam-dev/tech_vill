@@ -21,8 +21,8 @@ const sortOptions = [
 
 function ProductPage() {
   const [categoryProduct, setCategoryProduct] = useState([]);
-  /* const params = useSearchParams().get("category");
-  console.log(params); */
+  const params = useSearchParams().get("category");
+  console.log(params); 
 
   const categories = getUniqueObjects(categoryProduct, "category");
   const [selectedOption, setSelectedOption] = useState(null);
@@ -72,9 +72,9 @@ function ProductPage() {
     setSelectedOption("default");
     setSortData("default");
   }, []);
- /*  useEffect(() => {
+  useEffect(() => {
     params && setSelectedOption(params);
-  }, [params]); */
+  }, [params]);
 
   return (
     <div className="grid px-6 pt-8 sm:pt-28 place-items-center space-y-7">
