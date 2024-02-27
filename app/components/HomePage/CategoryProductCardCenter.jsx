@@ -1,13 +1,16 @@
-import Image from "next/image";
 import React from "react";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 
-import Ring from "../../../public/img13.jpg";
+import Ring from "../../../public/CATEGORY_IMAGE/automotives.jpg";
 function CategoryProductCardCenter() {
+  const params = useRouter();
+
   return (
     <div className="rounded-md sm:grid sm:grid-cols-6 sm:gap-4 bg-gray-100 overflow-hidden">
       <div className="sm:col-span-3 p-12 grid place-items-center">
         <Image
-          className=""
+          className="rounded-md max-h-[300px] object-cover"
           src={Ring}
           alt="Ring"
           width={400}
@@ -27,6 +30,7 @@ function CategoryProductCardCenter() {
         </p>
         <div className="">
           <button
+          onClick={() => params.push("/product?category=automotive")}
             type="button"
             className="transition-colors duration-200 ease-in-out text-base border border-violet-900 text-violet-900 hover:bg-violet-900 hover:text-gray-50 py-1 px-2"
           >

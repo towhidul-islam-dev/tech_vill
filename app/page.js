@@ -15,10 +15,11 @@ export default function Home() {
   return (
     <div className="grid place-items-center pt-6 sm:pt-24">
       <div className="relative w-full h-full max-w-7xl">
+        
         <div className="px-4 xl:px-0">
           <Slider />
         </div>
-        <Header />
+        {/* <Header /> */}
         <div className="px-4 py-20 xl:px-0 ">
           <ArticleForNewCollection />
         </div>

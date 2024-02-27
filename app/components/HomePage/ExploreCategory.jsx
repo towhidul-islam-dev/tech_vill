@@ -30,7 +30,6 @@ import Image24 from "../../../public/CATEGORY_IMAGE/tops.jpg";
 
 function ExploreCategory() {
   const params = useRouter();
-  console.log(params);
   return (
     <div>
       <h2 className="pb-4 text-3xl font-semibold text-center capitalize border-b border-violet-300 ">
