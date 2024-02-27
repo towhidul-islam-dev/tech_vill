@@ -39,7 +39,6 @@ export function CartContext({ children }) {
     );
   };
 
-  console.log(checkOutProduct);
   return (
     <CartContextProvider.Provider
       value={{
