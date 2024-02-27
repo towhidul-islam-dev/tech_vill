@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState, useContext } from "react";
 import Error from "next/error";
+import { useSearchParams } from "next/navigation";
 
 import { useQuery } from "@tanstack/react-query";
 
@@ -8,7 +9,6 @@ import CartContextProvider from "../../context/CartContext";
 import Category from "./components/Category";
 import Product from "./components/Product";
 import SortProduct from "./components/SortingProduct";
-import { useSearchParams } from "next/navigation";
 
 const sortOptions = [
   { id: 1, name: "default", value: "default" },
