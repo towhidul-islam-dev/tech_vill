@@ -1,7 +1,8 @@
 "use client";
-import React, { useEffect, useState, useContext, Suspense } from "react";
+import React, { useEffect, useState, useContext} from "react";
 import Error from "next/error";
-import { useSearchParams } from "next/navigation";
+import {  useSearchParams } from "next/navigation";
+import { useRouter } from "next/router";
 
 import { useQuery } from "@tanstack/react-query";
 
@@ -21,6 +22,7 @@ const sortOptions = [
 function ProductPage() {
   const [categoryProduct, setCategoryProduct] = useState([]);
   const params = useSearchParams().get("category");
+  console.log(params);
 
   const categories = getUniqueObjects(categoryProduct, "category");
   const [selectedOption, setSelectedOption] = useState(null);
@@ -70,48 +72,46 @@ function ProductPage() {
     setSelectedOption("default");
     setSortData("default");
   }, []);
-  useEffect(() => {
+ /*  useEffect(() => {
     params && setSelectedOption(params);
-  }, [params]);
+  }, [params]); */
 
   return (
-    <Suspense>
-      <div className="grid px-6 pt-8 sm:pt-28 place-items-center space-y-7">
-        <div className="flex justify-end w-full gap-4 max-w-7xl z-30">
-          <div>
-            <h4 className="pb-1 text-sm font-semibold text-right text-gray-500">
-              Filter
-            </h4>
-            <Category
-              options={categories}
-              selectedOption={selectedOption}
-              setSelectedOption={setSelectedOption}
-            />
-          </div>
-          <div>
-            <h4 className="pb-1 text-sm font-semibold text-right text-gray-500">
-              Sort
-            </h4>
-            <SortProduct
-              sortOptions={sortOptions}
-              sortData={sortData}
-              setSortData={setSortData}
-            />
-          </div>
+    <div className="grid px-6 pt-8 sm:pt-28 place-items-center space-y-7">
+      <div className="flex justify-end w-full gap-4 max-w-7xl z-30">
+        <div>
+          <h4 className="pb-1 text-sm font-semibold text-right text-gray-500">
+            Filter
+          </h4>
+          <Category
+            options={categories}
+            selectedOption={selectedOption}
+            setSelectedOption={setSelectedOption}
+          />
         </div>
-
-        <Product
-          ctry={selectedOption}
-          data={data}
-          sortData={sortData}
-          setSortData={setSortData}
-          cart={cart}
-          setCart={setCart}
-          addToCart={addToCart}
-          setUnFilteredCart={setUnFilteredCart}
-        />
+        <div>
+          <h4 className="pb-1 text-sm font-semibold text-right text-gray-500">
+            Sort
+          </h4>
+          <SortProduct
+            sortOptions={sortOptions}
+            sortData={sortData}
+            setSortData={setSortData}
+          />
+        </div>
       </div>
-    </Suspense>
+
+      <Product
+        ctry={selectedOption}
+        data={data}
+        sortData={sortData}
+        setSortData={setSortData}
+        cart={cart}
+        setCart={setCart}
+        addToCart={addToCart}
+        setUnFilteredCart={setUnFilteredCart}
+      />
+    </div>
   );
 }
 
