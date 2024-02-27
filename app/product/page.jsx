@@ -1,8 +1,8 @@
 "use client";
-import React, { useEffect, useState, useContext} from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Error from "next/error";
-import {  useSearchParams } from "next/navigation";
-import { useRouter } from "next/router";
+import { useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 import { useQuery } from "@tanstack/react-query";
 
@@ -21,8 +21,9 @@ const sortOptions = [
 
 function ProductPage() {
   const [categoryProduct, setCategoryProduct] = useState([]);
-  const params = useSearchParams().get("category");
-  console.log(params); 
+  /* const params = useSearchParams().get("category");
+  console.log(params);  */
+  let params = "";
 
   const categories = getUniqueObjects(categoryProduct, "category");
   const [selectedOption, setSelectedOption] = useState(null);
@@ -72,7 +73,13 @@ function ProductPage() {
     setSelectedOption("default");
     setSortData("default");
   }, []);
-  useEffect(() => {
+
+  if (typeof window !== "undefined") {
+    const searchParams = new URLSearchParams(window.location.search);
+    params = searchParams.get("category");
+  }
+console.log(params);
+    useEffect(() => {
     params && setSelectedOption(params);
   }, [params]);
 
